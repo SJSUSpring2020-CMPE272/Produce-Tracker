@@ -34,6 +34,8 @@ Front-End: ReactJS, Redux, Boostrap, Less.
 
 Back-End: NodeJS, Express, MongoDB, Tensorflow, Sci-Kit-Learn, OAuth, Python.
 
+Platform Used: Kubernetes, IBM blockchain
+
 
 Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
 
