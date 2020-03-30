@@ -14,6 +14,9 @@ function App() {
             <span class="heading-primary-main">Produce Tracker</span>
             <span class="heading-primary-sub">Secure Storage</span>
           </h1>
+          <a href="#" class="btn btn-white">
+            Sign In
+          </a>
         </div>
       </header>
     </div>

@@ -55,6 +55,7 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -85,8 +86,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 @keyframes moveInLeft {
@@ -130,6 +131,16 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn-white {
