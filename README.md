@@ -38,7 +38,7 @@ Platform Used: Kubernetes, IBM blockchain
 
 Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
 
-
+![](images/architectureDiagram.PNG)
 
 
 
