@@ -1,6 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Signup } from "./pages/Signup";
+import { Dashboard } from "./pages/Dashboard";
+import "./App.scss";
 
 function App() {
   return (
@@ -11,8 +14,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/dashboard" component={Feed} />
-              <Route component={NoMatch} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
           </div>
         </div>

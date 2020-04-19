@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.less";
+import "./Home.scss";
 
 export const Home = () => (
-<header class="header">
-  <div class="header__text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary--main">Yehia Qtaish</span>
-      <span class="heading-primary--sub">Software Engineer</span>
-    </h1>
-    <a href="#" class="btn btn--white btn--animated">
-      Click Here :)
-    </a>
+  <div class="header">
+    <div class="header__text-box">
+      <h1 class="heading-primary">
+        <span class="heading-primary--main">Produce-Tracker</span>
+        <span class="heading-primary--sub">Safe Storage</span>
+      </h1>
+      <Link to="/signup">
+        <a type="submit" href="#" class="btn btn--white btn--animated">
+          Sign In
+        </a>
+      </Link>
+    </div>
   </div>
-</header>;
+);

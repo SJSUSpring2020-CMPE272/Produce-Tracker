@@ -1,0 +1,44 @@
+@import "./pages/Home.scss";
+@import "./pages/Signup.scss";
+@import "./pages/Dashboard.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* inherit from body */
+  box-sizing: inherit;
+}
+
+html {
+  /*
+  font-size: 10px;
+  to percent is 10/16 = 62.5
+  */
+  font-size: 62.5%; // 1 rem is 10px 10/16 = 62.5
+
+  @media screen and (max-width: 900px) {
+    font-size: 56.25%;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 50%;
+  }
+
+  @media screen and (min-width: 1800px) {
+    font-size: 70%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #777;
+  @media screen and (max-width: 900px) {
+    padding: 0;
+  }
+}

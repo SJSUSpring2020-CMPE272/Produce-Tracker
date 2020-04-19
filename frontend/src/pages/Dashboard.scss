@@ -1,0 +1,72 @@
+// Grid
+.row {
+  max-width: 114rem;
+  text-align: center;
+  /*
+        Make the elements inside of elements center
+      */
+  margin: 0 auto;
+  // width: 80%;
+  /*
+      select everything except the last child
+      */
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+
+    @media screen and (max-width: 900px) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /*
+      Select only elements which starts with col-
+      */
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: 4rem;
+
+      @media screen and (max-width: 900px) {
+        margin-right: 0;
+        margin-bottom: 6rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 100% !important;
+      margin-right: 0;
+    }
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{4rem}) / 3);
+  }
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(#55c57a, 0.8),
+      rgba(#28b485, 0.8)
+    ),
+    url(/nat-1-large.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @media screen and (max-width: 900px) {
+    padding: 10rem 0;
+  }
+}
