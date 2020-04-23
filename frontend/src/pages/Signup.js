@@ -5,44 +5,30 @@ import "./Signup.scss";
 export const Signup = () => (
   <div class="section-about">
     <div class="u-center-text u-margin-bottom-6">
-      <h2 class="heading-secondary">Welcome to my Portfolio!</h2>
+      <h2 class="heading-secondary">Produce Tracker: Secure Storage!</h2>
     </div>
     <div class="row">
       <div class="col-1-of-2">
         <h3 class="heading-about u-margin-bottom-6">
           Welcome! Sign In Using G Mail!
         </h3>
-        <form className="signup-form">
-          <div className="form-group row p-1">
-            <label for="inputEmail3" className="col-sm-2 col-form-label">
-              Email
-            </label>
-            <div className="col-sm-10">
-              <input type="email" className="form-control" id="inputEmail3" />
+        <div class="wrapper fadeInDown">
+          <div id="formContent">
+            <h2 class="active"> Sign In </h2>
+            <h2 class="inactive underlineHover">Sign Up </h2>
+            <form>
+              <input type="text" id="login" class="fadeIn second" />
+              <input type="text" id="password" class="fadeIn third" />
+              <input type="submit" class="fadeIn fourth" />
+            </form>
+
+            <div class="formFooter">
+              <a class="underlineHover" href="#">
+                Forgot Password?
+              </a>
             </div>
           </div>
-          <div className="form-group row p-1">
-            <label for="inputPassword3" className="col-sm-2 col-form-label">
-              Password
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="password"
-                className="form-control"
-                id="inputPassword3"
-              />
-            </div>
-          </div>
-          <div className="form-group row">
-            <div className="mx-auto">
-              <Link to="/dashboard">
-                <button type="submit" className="btn btn-primary">
-                  Sign in
-                </button>
-              </Link>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
       <div class="col-1-of-2">
         <div class="composition">
