@@ -1,0 +1,9 @@
+{
+    "connection_file": "mychannel_produce-tracker_profile.json",
+    "appAdmin": "app-admin",
+    "appAdminSecret": "app-adminpw",
+    "orgMSPID": "Org1MSP",
+    "caName": "173.193.79.253:32113",
+    "userName": "user",
+    "gatewayDiscovery": { "enabled": true, "asLocalhost": false }
+}
