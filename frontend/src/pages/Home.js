@@ -11,9 +11,11 @@ export const Home = () => (
       </h1>
       <Link to="/signup">
         <a type="submit" href="#" class="btn btn--white btn--animated">
-          Sign In
+          Retreive Order
+        </a></Link>
+        <a type="submit" href="#" class="btn btn--white btn--animated">
+          Create Order
         </a>
-      </Link>
     </div>
   </div>
 );

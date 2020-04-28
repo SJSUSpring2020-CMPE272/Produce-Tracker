@@ -10,23 +10,17 @@ export const Signup = () => (
     <div class="row">
       <div class="col-1-of-2">
         <h3 class="heading-about u-margin-bottom-6">
-          Welcome! Sign In Using G Mail!
+          Retreive your order!
         </h3>
         <div class="wrapper fadeInDown">
           <div id="formContent">
-            <h2 class="active"> Sign In </h2>
-            <h2 class="inactive underlineHover">Sign Up </h2>
+            <h2 class="active"> Enter Order ID </h2>
             <form>
               <input type="text" id="login" class="fadeIn second" />
-              <input type="text" id="password" class="fadeIn third" />
+              <Link to="/dashboard">
               <input type="submit" class="fadeIn fourth" />
+              </Link>
             </form>
-
-            <div class="formFooter">
-              <a class="underlineHover" href="#">
-                Forgot Password?
-              </a>
-            </div>
           </div>
         </div>
       </div>
