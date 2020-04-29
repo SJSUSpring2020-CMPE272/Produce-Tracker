@@ -1,33 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.scss";
 
-export class Dashboard extends React.Component {
-  state = {
-    response: '',
-    post: '',
-    responseToPost: '',
-  };
-
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
-
-
-  callApi = async () => {
-    const response = await fetch('/getOrder?key=ORDER1');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    
-    return body;
-  };
-
-  render() {
-    return (
+export const Dashboard = (props) =>{ 
+  console.log(props)
+  return (
     <div className="section-dashboard" id="timeline-content">
-      <h1 className="header_h1">Order # Chain Flow</h1>
+      <h1 className="header_h1"> { props.location.order.orderId}# Chain Flow</h1>
 
       <ul className="timeline">
         <li className="event" data-date="65Million B.C.">
@@ -56,7 +35,5 @@ export class Dashboard extends React.Component {
         </li>
       </ul>
     </div>
-)
-  }
-
+);
 }

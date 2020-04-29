@@ -3,13 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Signup } from "./pages/Signup";
 import { Dashboard } from "./pages/Dashboard";
+import { createBrowserHistory } from "history";
 import "./App.scss";
 
 function App() {
+
+  const history = createBrowserHistory();
+
   return (
-    <Router>
-      <React.Fragment>
-        <div className="container jumbo">
+    <Router history={history}>
           <div>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -17,8 +19,6 @@ function App() {
               <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
           </div>
-        </div>
-      </React.Fragment>
     </Router>
   );
 }
