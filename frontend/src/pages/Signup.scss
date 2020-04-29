@@ -137,7 +137,7 @@
     @media screen and (max-width: 900px) {
       float: middle;
       position: relative;
-      width: 33.33333333%;
+      width: 40%;
       box-shadow: 0 1.5rem 4rem rgba(#000, 0.4);
     }
 
@@ -245,9 +245,7 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+.field {
   background-color: #56baed;
   border: none;
   color: white;

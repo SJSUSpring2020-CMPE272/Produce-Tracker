@@ -49,30 +49,31 @@ export class Signup extends React.Component {
         </h3>
         <div className="wrapper fadeInDown">
           <div id="formContent">
-            <h2 class="active"> Enter Order ID </h2>
-              <input type="text" 
-                      className="fadeIn second"
+            <h2 className="active"> Enter Order ID </h2>
+              <input 
+                      type="text" 
+                      className="fadeIn second field"
                       value={this.state.order_details}
                       onChange={(event) => this.handleChange(event)} 
                        />
                 <button 
-                       className="fadeIn fourth"
+                       className="field fadeIn fourth"
                        onClick={ (event) => this.handleSubmit(event)}
                        > Submit </button>
           </div>
         </div>
       </div>
-      <div class="col-1-of-2">
-        <div class="composition">
+      <div className="col-1-of-2">
+        <div className="composition">
           <img
             src="blockchain-online.jpeg"
             alt="Photo 1"
-            class="composition__photo composition__photo--p1"
+            className="composition__photo composition__photo--p1"
           />
           <img
             src="blockchain-supply-chain.png"
             alt="Photo 2"
-            class="composition__photo composition__photo--p2"
+            className="composition__photo composition__photo--p2"
           />
         </div>
       </div>
