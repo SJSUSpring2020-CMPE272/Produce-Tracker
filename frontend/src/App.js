@@ -7,20 +7,19 @@ import { createBrowserHistory } from "history";
 import "./App.scss";
 
 function App() {
+    const history = createBrowserHistory();
 
-  const history = createBrowserHistory();
-
-  return (
-    <Router history={history}>
-          <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/dashboard" component={Dashboard} />
-            </Switch>
-          </div>
-    </Router>
-  );
+    return (
+        <Router history={history}>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/dashboard" component={Dashboard} />
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

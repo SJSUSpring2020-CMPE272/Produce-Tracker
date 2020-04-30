@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/signup -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="icon" href="http://localhost:3000/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <meta name="description" content="Web site created using create-react-app">
+        <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+        <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+        <link rel="manifest" href="http://localhost:3000/manifest.json">
+        <link href="./React App_files/css2" rel="stylesheet">
+        <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+        <title>React App</title>
+    <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(56, 0, 54, 0.5), rgba(12, 186, 186, 0.8)), url(/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
+  @media screen and (max-width: 600px) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); } }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  font-size: 40px;
+  letter-spacing: 1rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; }
+  .heading-primary--main {
+    font-weight: 700; }
+    @media screen and (max-width: 600px) {
+      .heading-primary--main {
+        letter-spacing: 0.5rem; } }
+
+.heading-secondary {
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 10rem; }
+  @media screen and (max-width: 900px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  .heading-secondary:hover {
+    transform: skewY(5deg) skewX(10deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.home-main-btn {
+  font-size: 20px;
+  background-color: rgba(79, 176, 221, 0.685);
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  padding: 15px 20px;
+  display: inline-block;
+  transition: all 0.2s;
+  box-shadow: -2px 2px 25px -2px black;
+  border-radius: 50px;
+  border: 0.5px solid black;
+  margin: 10px;
+  color: #fff; }
+  .home-main-btn:hover {
+    background-color: rgba(121, 133, 139, 0.774);
+    color: #fff;
+    transform: translateY(-2px);
+    cursor: pointer; }
+  .home-main-btn:active {
+    transform: translateY(0); }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    transform: rotate(50deg);
+    /*
+      transform: rotate(50deg); 
+      */ }
+  80% {
+    transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translate(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+</style><style type="text/css">.row {
+  max-width: 114rem;
+  text-align: center;
+  /*
+      Make the elements inside of elements center
+    */
+  margin: 0 auto;
+  /*
+    select everything except the last child
+    */
+  /*
+    Select only elements which starts with col-
+    */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media screen and (max-width: 900px) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media screen and (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 4rem; }
+      @media screen and (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media screen and (max-width: 900px) {
+      .row [class^="col-"] {
+        width: 100% !important;
+        margin-right: 0; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 4rem) / 2); }
+  .row .col-1-of-1 {
+    width: 100%; }
+
+.section-about {
+  background: #f7f7f7;
+  padding: 15rem 0;
+  width: 100%;
+  position: relative;
+  height: 95vh;
+  display: inline-block; }
+  @media screen and (max-width: 900px) {
+    .section-about {
+      padding: 15rem 0; } }
+
+.heading-secondary {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: inline-block;
+  background-image: linear-gradient(to right, #09203f, #537895);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%; }
+  @media screen and (max-width: 900px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+
+.heading-small {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #09203f, #537895);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%; }
+  @media screen and (max-width: 900px) {
+    .heading-small {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-small {
+      font-size: 2.5rem; } }
+
+/* STRUCTURE */
+.wrapper {
+  text-align: center;
+  border: 10px;
+  background-color: #777;
+  width: 500px;
+  justify-content: center;
+  padding: 25px;
+  position: absolute; }
+
+.mini_header {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+  color: #163c52;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem; }
+
+/* 
+/* FORM TYPOGRAPHY*/
+.field {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  transition: all 0.3s ease-in-out; }
+
+/* ANIMATIONS */
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
+/* Simple CSS3 Fade-in Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s; }
+
+.fadeIn.first {
+  animation-delay: 0.4s; }
+
+.fadeIn.second {
+  animation-delay: 0.6s; }
+
+.fadeIn.third {
+  animation-delay: 0.8s; }
+
+.fadeIn.fourth {
+  animation-delay: 1s; }
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s; }
+
+.underlineHover:hover {
+  color: #0d0d0d; }
+
+.underlineHover:hover:after {
+  width: 100%; }
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800);</style><style type="text/css">.row {
+  max-width: 114rem;
+  text-align: center;
+  /*
+        Make the elements inside of elements center
+      */
+  margin: 0 auto;
+  /*
+      select everything except the last child
+      */
+  /*
+      Select only elements which starts with col-
+      */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media screen and (max-width: 900px) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media screen and (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 4rem; }
+      @media screen and (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media screen and (max-width: 900px) {
+      .row [class^="col-"] {
+        width: 100% !important;
+        margin-right: 0; } }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 4rem) / 3);
+    border: solid red; }
+
+.section-dashboard {
+  padding: 5rem 0;
+  background-color: #252827;
+  margin-top: -25vh;
+  font-size: 1.5rem;
+  font-family: 'Open Sans', sans-serif; }
+  @media screen and (max-width: 900px) {
+    .section-dashboard {
+      padding: 10rem 0; } }
+
+/* Import */
+/* Variables */
+/* Base */
+.header_h1 {
+  font-family: "Saira", sans-serif;
+  letter-spacing: 1.5px;
+  color: white;
+  font-weight: 400;
+  font-size: 2.4em; }
+
+#timeline-content {
+  margin-top: 50px;
+  text-align: center; }
+
+/* Timeline */
+.timeline {
+  border-left: 4px solid #004ffc;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background: fade(white, 3%);
+  color: fade(white, 80%);
+  font-family: "Chivo", sans-serif;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 50px;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  max-width: 50%; }
+  .timeline h1 {
+    font-family: "Saira", sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+    font-size: 1.4em; }
+  .timeline h2, .timeline h3 {
+    font-family: "Saira", sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 1.4em; }
+  .timeline .event {
+    border-bottom: 1px dashed fade(white, 10%);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative; }
+    .timeline .event:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none; }
+    .timeline .event:before, .timeline .event:after {
+      position: absolute;
+      display: block;
+      top: 0; }
+    .timeline .event:before {
+      left: -217.5px;
+      color: fade(white, 11px);
+      content: attr(data-date);
+      text-align: right;
+      font-weight: 100;
+      font-size: 0.9em;
+      min-width: 120px;
+      font-family: "Saira", sans-serif; }
+    .timeline .event:after {
+      box-shadow: 0 0 0 4px fade(#004ffc, 100%);
+      left: -64.85px;
+      background: #313534;
+      border-radius: 50%;
+      height: 11px;
+      width: 11px;
+      content: "";
+      top: 5px; }
+</style><style type="text/css">@import url(https://fonts.googleapis.com/css?family=Chivo:300,300i,400,400i,700,700i,900,900i|Saira+Extra+Condensed:100,200,300,400,500,600,700,800|Saira:100,200,300,400,500,600,700,800);</style><style type="text/css">.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(56, 0, 54, 0.5), rgba(12, 186, 186, 0.8)), url(/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
+  @media screen and (max-width: 600px) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); } }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  font-size: 40px;
+  letter-spacing: 1rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; }
+  .heading-primary--main {
+    font-weight: 700; }
+    @media screen and (max-width: 600px) {
+      .heading-primary--main {
+        letter-spacing: 0.5rem; } }
+
+.heading-secondary {
+  font-size: 4rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 10rem; }
+  @media screen and (max-width: 900px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  .heading-secondary:hover {
+    transform: skewY(5deg) skewX(10deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.home-main-btn {
+  font-size: 20px;
+  background-color: rgba(79, 176, 221, 0.685);
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  padding: 15px 20px;
+  display: inline-block;
+  transition: all 0.2s;
+  box-shadow: -2px 2px 25px -2px black;
+  border-radius: 50px;
+  border: 0.5px solid black;
+  margin: 10px;
+  color: #fff; }
+  .home-main-btn:hover {
+    background-color: rgba(121, 133, 139, 0.774);
+    color: #fff;
+    transform: translateY(-2px);
+    cursor: pointer; }
+  .home-main-btn:active {
+    transform: translateY(0); }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    transform: rotate(50deg);
+    /*
+      transform: rotate(50deg); 
+      */ }
+  80% {
+    transform: translate(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translate(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.row {
+  max-width: 114rem;
+  text-align: center;
+  /*
+      Make the elements inside of elements center
+    */
+  margin: 0 auto;
+  /*
+    select everything except the last child
+    */
+  /*
+    Select only elements which starts with col-
+    */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media screen and (max-width: 900px) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media screen and (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 4rem; }
+      @media screen and (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media screen and (max-width: 900px) {
+      .row [class^="col-"] {
+        width: 100% !important;
+        margin-right: 0; } }
+  .row .col-1-of-2 {
+    width: calc((100% - 4rem) / 2); }
+  .row .col-1-of-1 {
+    width: 100%; }
+
+.section-about {
+  background: #f7f7f7;
+  padding: 15rem 0;
+  width: 100%;
+  position: relative;
+  height: 95vh;
+  display: inline-block; }
+  @media screen and (max-width: 900px) {
+    .section-about {
+      padding: 15rem 0; } }
+
+.heading-secondary {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: inline-block;
+  background-image: linear-gradient(to right, #09203f, #537895);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%; }
+  @media screen and (max-width: 900px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
+
+.heading-small {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #09203f, #537895);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%; }
+  @media screen and (max-width: 900px) {
+    .heading-small {
+      font-size: 2.5rem; } }
+  @media screen and (max-width: 600px) {
+    .heading-small {
+      font-size: 2.5rem; } }
+
+/* STRUCTURE */
+.wrapper {
+  text-align: center;
+  border: 10px;
+  background-color: #777;
+  width: 500px;
+  justify-content: center;
+  padding: 25px;
+  position: absolute; }
+
+.mini_header {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+  color: #163c52;
+  transition: all 0.2s;
+  margin-bottom: 4rem;
+  margin-top: 1rem; }
+
+/* 
+/* FORM TYPOGRAPHY*/
+.field {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  transition: all 0.3s ease-in-out; }
+
+/* ANIMATIONS */
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
+/* Simple CSS3 Fade-in Animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s; }
+
+.fadeIn.first {
+  animation-delay: 0.4s; }
+
+.fadeIn.second {
+  animation-delay: 0.6s; }
+
+.fadeIn.third {
+  animation-delay: 0.8s; }
+
+.fadeIn.fourth {
+  animation-delay: 1s; }
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #56baed;
+  content: "";
+  transition: width 0.2s; }
+
+.underlineHover:hover {
+  color: #0d0d0d; }
+
+.underlineHover:hover:after {
+  width: 100%; }
+
+.row {
+  max-width: 114rem;
+  text-align: center;
+  /*
+        Make the elements inside of elements center
+      */
+  margin: 0 auto;
+  /*
+      select everything except the last child
+      */
+  /*
+      Select only elements which starts with col-
+      */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media screen and (max-width: 900px) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media screen and (max-width: 900px) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 4rem; }
+      @media screen and (max-width: 900px) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media screen and (max-width: 900px) {
+      .row [class^="col-"] {
+        width: 100% !important;
+        margin-right: 0; } }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 4rem) / 3);
+    border: solid red; }
+
+.section-dashboard {
+  padding: 5rem 0;
+  background-color: #252827;
+  margin-top: -25vh;
+  font-size: 1.5rem;
+  font-family: 'Open Sans', sans-serif; }
+  @media screen and (max-width: 900px) {
+    .section-dashboard {
+      padding: 10rem 0; } }
+
+/* Import */
+/* Variables */
+/* Base */
+.header_h1 {
+  font-family: "Saira", sans-serif;
+  letter-spacing: 1.5px;
+  color: white;
+  font-weight: 400;
+  font-size: 2.4em; }
+
+#timeline-content {
+  margin-top: 50px;
+  text-align: center; }
+
+/* Timeline */
+.timeline {
+  border-left: 4px solid #004ffc;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background: fade(white, 3%);
+  color: fade(white, 80%);
+  font-family: "Chivo", sans-serif;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 50px;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  max-width: 50%; }
+  .timeline h1 {
+    font-family: "Saira", sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+    font-size: 1.4em; }
+  .timeline h2, .timeline h3 {
+    font-family: "Saira", sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 1.4em; }
+  .timeline .event {
+    border-bottom: 1px dashed fade(white, 10%);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative; }
+    .timeline .event:last-of-type {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none; }
+    .timeline .event:before, .timeline .event:after {
+      position: absolute;
+      display: block;
+      top: 0; }
+    .timeline .event:before {
+      left: -217.5px;
+      color: fade(white, 11px);
+      content: attr(data-date);
+      text-align: right;
+      font-weight: 100;
+      font-size: 0.9em;
+      min-width: 120px;
+      font-family: "Saira", sans-serif; }
+    .timeline .event:after {
+      box-shadow: 0 0 0 4px fade(#004ffc, 100%);
+      left: -64.85px;
+      background: #313534;
+      border-radius: 50%;
+      height: 11px;
+      width: 11px;
+      content: "";
+      top: 5px; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* inherit from body */
+  box-sizing: inherit; }
+
+html {
+  /*
+  font-size: 10px;
+  to percent is 10/16 = 62.5
+  */
+  font-size: 62.5%;
+  font-family: "Assistant", sans-serif; }
+  @media screen and (max-width: 900px) {
+    html {
+      font-size: 56.25%; } }
+  @media screen and (max-width: 600px) {
+    html {
+      font-size: 50%; } }
+  @media screen and (min-width: 1800px) {
+    html {
+      font-size: 70%; } }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  font-family: "Assistant", sans-serif;
+  line-height: 1.7;
+  color: #777; }
+  @media screen and (max-width: 900px) {
+    body {
+      padding: 0; } }
+</style><script charset="utf-8" src="./React App_files/main.2164d4ee5b5e60bd5e0d.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.0cb6bba1103953e2a708.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.e2f55045a32aa165a2bb.hot-update.js"></script></head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"><div><div class="section-about"><div class="heading-secondary">Produce Tracker: Secure Storage!</div><div class="heading-small">Retrive your order</div><div class="wrapper"><div class="mini_header"> Enter Order ID </div><input type="text" class="form-input" value=""><button class="field">Submit </button></div></div></div></div>
+        <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    --><script src="./React App_files/bundle.js"></script><script src="./React App_files/1.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.7b3f044d38b959b39d87.hot-update.js"></script>
+
+</body></html>

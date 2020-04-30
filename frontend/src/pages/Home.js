@@ -3,19 +3,18 @@ import { Link } from "react-router-dom";
 import "./Home.scss";
 
 export const Home = () => (
-  <div class="header">
-    <div class="header__text-box">
-      <h1 class="heading-primary">
-        <span class="heading-primary--main">Produce-Tracker</span>
-        <span class="heading-primary--sub">Safe Storage</span>
-      </h1>
-      <Link to="/signup">
-        <a type="submit" href="#" class="btn btn--white btn--animated">
-          Retreive Order
-        </a></Link>
-        <a type="submit" href="#" class="btn btn--white btn--animated">
-          Create Order
-        </a>
+    <div className="header">
+        <div className="header__text-box">
+            <div className="heading-primary">
+                <p className="heading-primary--main">Produce-Tracker</p>
+                <p className="heading-primary--sub">Safe Storage</p>
+            </div>
+            <Link to="/signup">
+                <button className="home-main-btn">Retreive Order</button>
+            </Link>
+            <Link to="/create">
+                <button className="home-main-btn">Create Order</button>
+            </Link>
+        </div>
     </div>
-  </div>
 );
