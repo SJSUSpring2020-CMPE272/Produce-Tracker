@@ -42,7 +42,7 @@ Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
 ![](images/architectureDiagram.PNG)
 
 
-* How does it work IBM Blockhain platform
+* How does it work with IBM Blockhain platform
 
 <img src="images/blockchain.png" width="700" hight="500">
 
