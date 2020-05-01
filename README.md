@@ -38,7 +38,10 @@ Platform Used: Kubernetes, IBM blockchain,AWS EC2
 
 Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
 
-![](images/architectureDiagram.PNG)
+* Architecture Diagram
+
+
+<img src="images/blockchain.png" width="600" hight="500">
 
 
 
