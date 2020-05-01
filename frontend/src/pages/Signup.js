@@ -41,8 +41,8 @@ export class Signup extends React.Component {
     }
 
     render() {
-        console.log(this);
-        console.log(this.props.history);
+        // console.log(this);
+        // console.log(this.props.history);
         return (
             <div className="section-about">
                 <div className="heading-secondary">

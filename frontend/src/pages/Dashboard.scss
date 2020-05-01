@@ -1,72 +1,90 @@
-// Grid
-.row {
-    max-width: 114rem;
-    text-align: center;
-    /*
-        Make the elements inside of elements center
-      */
-    margin: 0 auto;
-    // width: 80%;
-    /*
-      select everything except the last child
-      */
-    &:not(:last-child) {
-        margin-bottom: 8rem;
+// // Grid
+// .row {
+//     max-width: 114rem;
+//     text-align: center;
+//     /*
+//         Make the elements inside of elements center
+//       */
+//     margin: 0 auto;
+//     // width: 80%;
+//     /*
+//       select everything except the last child
+//       */
+//     &:not(:last-child) {
+//         margin-bottom: 8rem;
 
-        @media screen and (max-width: 900px) {
-            margin-bottom: 6rem;
-        }
-    }
+//         @media screen and (max-width: 900px) {
+//             margin-bottom: 6rem;
+//         }
+//     }
 
-    @media screen and (max-width: 900px) {
-        max-width: 50rem;
-        padding: 0 3rem;
-    }
+//     @media screen and (max-width: 900px) {
+//         max-width: 50rem;
+//         padding: 0 3rem;
+//     }
 
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    /*
-      Select only elements which starts with col-
-      */
-    [class^="col-"] {
-        float: left;
+//     &::after {
+//         content: "";
+//         display: table;
+//         clear: both;
+//     }
+//     /*
+//       Select only elements which starts with col-
+//       */
+//     [class^="col-"] {
+//         float: left;
 
-        &:not(:last-child) {
-            margin-right: 4rem;
+//         &:not(:last-child) {
+//             margin-right: 4rem;
 
-            @media screen and (max-width: 900px) {
-                margin-right: 0;
-                margin-bottom: 6rem;
-            }
-        }
+//             @media screen and (max-width: 900px) {
+//                 margin-right: 0;
+//                 margin-bottom: 6rem;
+//             }
+//         }
 
-        @media screen and (max-width: 900px) {
-            width: 100% !important;
-            margin-right: 0;
-        }
-    }
+//         @media screen and (max-width: 900px) {
+//             width: 100% !important;
+//             margin-right: 0;
+//         }
+//     }
 
-    .col-1-of-3 {
-        width: calc((100% - 2 * #{4rem}) / 3);
-        border: solid red;
-    }
-}
+//     .col-1-of-3 {
+//         width: calc((100% - 2 * #{4rem}) / 3);
+//         border: solid red;
+//     }
+// }
 
-.section-dashboard {
-    padding: 5rem 0;
-    // background-image: linear-gradient(
-    //     to right bottom,
-    //     rgba(#252827, 0.3),
-    //     rgba(#111111, 0.8)
-    //);
-    background-color: #252827;
-    margin-top: -25vh;
-    font-size: 1.5rem;
-    font-family: "Open Sans", sans-serif;
-    @media screen and (max-width: 900px) {
-        padding: 10rem 0;
-    }
+// .section-dashboard {
+//     padding: 5rem 0;
+//     // background-image: linear-gradient(
+//     //     to right bottom,
+//     //     rgba(#252827, 0.3),
+//     //     rgba(#111111, 0.8)
+//     //);
+//     background-color: #252827;
+//     margin-top: -25vh;
+//     font-size: 1.5rem;
+//     font-family: "Open Sans", sans-serif;
+//     @media screen and (max-width: 900px) {
+//         padding: 10rem 0;
+//     }
+// }
+.bg {
+    height: 100vh;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(#380036, 0.8),
+            rgba(#0cbaba, 0.8)
+        ),
+        url(/supply-chain.jpg);
+    // background: no-repeat center center fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    position: relative;
 }
