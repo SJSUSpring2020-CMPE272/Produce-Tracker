@@ -39,7 +39,6 @@ Platform Used: Kubernetes, IBM blockchain,AWS EC2
 Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
 
 * Architecture Diagram
-
 ![](images/architectureDiagram.PNG)
 
 
