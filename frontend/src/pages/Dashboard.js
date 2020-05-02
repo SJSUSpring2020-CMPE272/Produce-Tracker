@@ -1,47 +1,77 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.scss";
 import { TimelinePost } from "./TimelinePost";
+import axios from "axios";
 
 export class Dashboard extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            order: null,
+        };
+    }
+
+    componentDidMount() {
+        axios
+            .get(
+                `http://localhost:8081/getOrder?key=${this.props.match.params.orderId}`
+            )
+            .then((res) => {
+                this.setState({ order: res.data[0].Record });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
     render() {
-        console.log(this.props.location.order.consumer);
-        console.log(this.props.history);
+        if (!this.state.order) {
+            return (
+                <div className="d-flex justify-content-center">
+                    <div
+                        className="spinner-border"
+                        style={{
+                            width: "100px",
+                            height: "100px",
+                            color: "blue",
+                        }}
+                    >
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                </div>
+            );
+        }
+        // console.log(this.state.order.consumer);
+        // console.log(this.props.history);
 
-        const consumer = this.props.location.order.consumer;
-        const consumer_date = this.props.location.order.deliveryDate;
+        const consumer = this.state.order.consumer;
+        const consumer_date = this.state.order.deliveryDate;
 
-        const retailer = this.props.location.order.retailer;
-        const retailer_add = this.props.location.order.retailerAddress;
-        const retailer_qual = this.props.location.order.qualityAtRetailer;
-        const retailer_date = this.props.location.order.retailProcessDate;
+        const retailer = this.state.order.retailer;
+        const retailer_add = this.state.order.retailerAddress;
+        const retailer_qual = this.state.order.qualityAtRetailer;
+        const retailer_date = this.state.order.retailProcessDate;
 
-        const manufacturer = this.props.location.order.manufacturer;
-        const manufacturer_add = this.props.location.order.manufacturerAddress;
-        const manufacturer_date = this.props.location.order
-            .manufactureProcessDate;
-        const manufacturer_qual = this.props.location.order
-            .qualityAtManufacturer;
+        const manufacturer = this.state.order.manufacturer;
+        const manufacturer_add = this.state.order.manufacturerAddress;
+        const manufacturer_date = this.state.order.manufactureProcessDate;
+        const manufacturer_qual = this.state.order.qualityAtManufacturer;
 
-        const wholesaler = this.props.location.order.wholesaler;
-        const wholesaler_date = this.props.location.order.wholesaleProcessDate;
-        const wholesaler_add = this.props.location.order.wholesalerAddress;
-        const wholesaler_qual = this.props.location.order.qualityAtWholeSaler;
+        const wholesaler = this.state.order.wholesaler;
+        const wholesaler_date = this.state.order.wholesaleProcessDate;
+        const wholesaler_add = this.state.order.wholesalerAddress;
+        const wholesaler_qual = this.state.order.qualityAtWholeSaler;
 
-        console.log(consumer);
-        console.log(retailer);
-        console.log(wholesaler);
-        console.log(manufacturer);
+        // console.log(consumer);
+        // console.log(retailer);
+        // console.log(wholesaler);
+        // console.log(manufacturer);
 
         if (consumer && retailer && wholesaler && manufacturer) {
             return (
                 <div className="bg">
                     <div className="container py-2">
-                        <h1 className="font-weight-dark text-center py-3">
-                            {this.props.location.order.foodItem} Transaction
+                        <h1 className="text-white text-center py-3">
+                            {this.state.order.foodItem} Transaction
                         </h1>
                     </div>
                     <TimelinePost
@@ -74,8 +104,8 @@ export class Dashboard extends React.Component {
             return (
                 <div className="bg">
                     <div className="container py-2">
-                        <h1 className="font-weight-dark text-center py-3">
-                            {this.props.location.order.foodItem} Transaction
+                        <h1 className="text-white text-center py-3">
+                            {this.state.order.foodItem} Transaction
                         </h1>
                         <TimelinePost
                             name={manufacturer}
@@ -104,8 +134,8 @@ export class Dashboard extends React.Component {
             return (
                 <div className="bg">
                     <div className="container py-2">
-                        <h1 className="font-weight-dark text-center py-3">
-                            {this.props.location.order.foodItem} Transaction
+                        <h1 className="text-white text-center py-3 ">
+                            {this.state.order.foodItem} Transaction
                         </h1>
                         <TimelinePost
                             name={manufacturer}
@@ -115,7 +145,7 @@ export class Dashboard extends React.Component {
                         />
                         <TimelinePost
                             name={wholesaler}
-                            address={wholesaler_date}
+                            date={wholesaler_date}
                             address={wholesaler_add}
                             qual={wholesaler_qual}
                         />
@@ -128,8 +158,8 @@ export class Dashboard extends React.Component {
             return (
                 <div className="bg">
                     <div className="container py-2">
-                        <h1 className="font-weight-dark text-center py-3">
-                            {this.props.location.order.foodItem} Transaction
+                        <h1 className="text-white text-center py-3">
+                            {this.state.order.foodItem} Transaction
                         </h1>
 
                         <TimelinePost

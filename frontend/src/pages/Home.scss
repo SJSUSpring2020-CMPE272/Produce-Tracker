@@ -6,12 +6,12 @@
             rgba(#380036, 0.5),
             rgba(#0cbaba, 0.8)
         ),
-        url(/hero.jpg);
+        url(/green-tractor.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 
     @media screen and (max-width: 600px) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);

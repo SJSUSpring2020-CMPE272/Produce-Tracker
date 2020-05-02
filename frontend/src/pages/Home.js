@@ -7,7 +7,7 @@ export const Home = () => (
         <div className="header__text-box">
             <div className="heading-primary">
                 <p className="heading-primary--main">Produce-Tracker</p>
-                <p className="heading-primary--sub">Safe Storage</p>
+                <p className="heading-primary--sub">Welcome {"Admin"}</p>
             </div>
             <Link to="/signup">
                 <button className="home-main-btn">Retreive Order</button>

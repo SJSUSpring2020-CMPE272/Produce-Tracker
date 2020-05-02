@@ -1,7 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
 import "./Signup.scss";
-import axios from "axios";
 
 export class Signup extends React.Component {
     constructor(props) {
@@ -19,26 +17,30 @@ export class Signup extends React.Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault();
-        axios
-            .get(
-                `http://localhost:8081/getOrder?key=${this.state.order_details}`
-            )
-            .then((res) => {
-                // console.log("response",res)
-                const order = {
-                    ...res.data[0].Record,
-                    orderId: this.state.order_details,
-                };
-                this.props.history.push({
-                    pathname: "/dashboard",
-                    order: order,
-                });
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        this.props.history.push(`/dashboard/${this.state.order_details}`);
     }
+
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     axios
+    //         .get(
+    //             `http://localhost:8081/getOrder?key=${this.state.order_details}`
+    //         )
+    //         .then((res) => {
+    //             // console.log("response",res)
+    //             const order = {
+    //                 ...res.data[0].Record,
+    //                 orderId: this.state.order_details,
+    //             };
+    //             this.props.history.push({
+    //                 pathname: "/dashboard",
+    //                 order: order,
+    //             });
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
 
     render() {
         // console.log(this);
@@ -55,15 +57,15 @@ export class Signup extends React.Component {
                     <h1 className="mini_header"> Enter Order ID </h1>
                     <input
                         type="text"
-                        className="input-field"
+                        className="input-field input-group-sm"
                         value={this.state.order_details}
                         onChange={(event) => this.handleChange(event)}
                     />
                     <button
-                        class="btn btn-primary field"
+                        className="field btn-small btn-primary"
                         onClick={(event) => this.handleSubmit(event)}
                     >
-                        Submit{" "}
+                        Submit
                     </button>
                 </div>
             </div>
