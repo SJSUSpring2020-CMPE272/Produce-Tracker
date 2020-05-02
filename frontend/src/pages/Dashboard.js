@@ -45,26 +45,26 @@ export class Dashboard extends React.Component {
                         </h1>
                     </div>
                     <TimelinePost
-                        man={manufacturer}
-                        man_add={manufacturer_add}
-                        man_date={manufacturer_date}
-                        man_qual={manufacturer_qual}
+                        name={manufacturer}
+                        address={manufacturer_add}
+                        date={manufacturer_date}
+                        qual={manufacturer_qual}
                     />
                     <TimelinePost
-                        whole={wholesaler}
-                        whole_date={wholesaler_date}
-                        whole_add={wholesaler_add}
-                        whole_qual={wholesaler_qual}
+                        name={wholesaler}
+                        date={wholesaler_date}
+                        address={wholesaler_add}
+                        qual={wholesaler_qual}
                     />
                     <TimelinePost
-                        retail={retailer}
-                        retail_add={retailer_add}
-                        retail_date={retailer_date}
-                        retailer_qual={retailer_qual}
+                        name={retailer}
+                        address={retailer_add}
+                        date={retailer_date}
+                        qual={retailer_qual}
                     />
                     <TimelinePost
-                        consumer={consumer}
-                        consumer_date={consumer_date}
+                        name={consumer}
+                        consdateumer_date={consumer_date}
                     />
                 </div>
             );
@@ -78,22 +78,22 @@ export class Dashboard extends React.Component {
                             {this.props.location.order.foodItem} Transaction
                         </h1>
                         <TimelinePost
-                            man={manufacturer}
-                            man_add={manufacturer_add}
-                            man_date={manufacturer_date}
-                            man_qual={manufacturer_qual}
+                            name={manufacturer}
+                            address={manufacturer_add}
+                            date={manufacturer_date}
+                            qual={manufacturer_qual}
                         />
                         <TimelinePost
-                            whole={wholesaler}
-                            whole_date={wholesaler_date}
-                            whole_add={wholesaler_add}
-                            whole_qual={wholesaler_qual}
+                            name={wholesaler}
+                            date={wholesaler_date}
+                            address={wholesaler_add}
+                            qual={wholesaler_qual}
                         />
                         <TimelinePost
-                            retail={retailer}
-                            retail_add={retailer_add}
-                            retail_date={retailer_date}
-                            retailer_qual={retailer_qual}
+                            name={retailer}
+                            address={retailer_add}
+                            date={retailer_date}
+                            qual={retailer_qual}
                         />
                     </div>
                 </div>
@@ -108,16 +108,16 @@ export class Dashboard extends React.Component {
                             {this.props.location.order.foodItem} Transaction
                         </h1>
                         <TimelinePost
-                            man={manufacturer}
-                            man_add={manufacturer_add}
-                            man_date={manufacturer_date}
-                            man_qual={manufacturer_qual}
+                            name={manufacturer}
+                            address={manufacturer_add}
+                            date={manufacturer_date}
+                            qual={manufacturer_qual}
                         />
                         <TimelinePost
-                            whole={wholesaler}
-                            whole_date={wholesaler_date}
-                            whole_add={wholesaler_add}
-                            whole_qual={wholesaler_qual}
+                            name={wholesaler}
+                            address={wholesaler_date}
+                            address={wholesaler_add}
+                            qual={wholesaler_qual}
                         />
                     </div>
                 </div>
@@ -133,10 +133,10 @@ export class Dashboard extends React.Component {
                         </h1>
 
                         <TimelinePost
-                            man={manufacturer}
-                            man_add={manufacturer_add}
-                            man_date={manufacturer_date}
-                            man_qual={manufacturer_qual}
+                            name={manufacturer}
+                            address={manufacturer_add}
+                            date={manufacturer_date}
+                            qual={manufacturer_qual}
                         />
                     </div>
                 </div>

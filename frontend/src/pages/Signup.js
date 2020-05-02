@@ -60,7 +60,7 @@ export class Signup extends React.Component {
                         onChange={(event) => this.handleChange(event)}
                     />
                     <button
-                        className="field"
+                        class="btn btn-primary field"
                         onClick={(event) => this.handleSubmit(event)}
                     >
                         Submit{" "}
