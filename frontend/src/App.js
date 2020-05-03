@@ -1,23 +1,29 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Router, Route, Switch } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { SearchOrder } from "./pages/SearchOrder";
+import { Dashboard } from "./pages/Dashboard";
+import { createBrowserHistory } from "history";
+import "./App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header class="header">
-        <div class="logo-box">
-          <img alt="Logo" class="logo" />
-        </div>
-        <div class="text-box">
-          <h1 class="heading-primary">
-            <span class="heading-primary-main">Produce Tracker</span>
-            <span class="heading-primary-sub">Secure Storage</span>
-          </h1>
-        </div>
-      </header>
-    </div>
-  );
+    const history = createBrowserHistory();
+
+    return (
+        <Router history={history}>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/searchorder" component={SearchOrder} />
+                    <Route
+                        exact
+                        path="/dashboard/:orderId"
+                        component={Dashboard}
+                    />
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

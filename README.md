@@ -21,8 +21,6 @@ One use case would be the problem California is facing with E Coli Roman Lettuce
 
 
 
-
-
 The web application will be using a frontend and backend framework to display the home page then be able to route through the application. For the frontend part the technology that would be used mostly ReactJS along with minor tools such as less and other npm libraries that can help development such as React Boostrap. Redux is a potential tool that could be use to ease up the data flow between the REST API NodeJS calls. On the side we will have our dataset training by using Pytorch, Sci Kit Learn, Tensorflow to run the data on algorithms to provide the application with the percentages and the coloring of the hot areas.
 
 
@@ -35,7 +33,19 @@ Front-End: ReactJS, Redux, Boostrap, Less.
 Back-End: NodeJS, Express, MongoDB, Tensorflow, Sci-Kit-Learn, OAuth, Python.
 
 
+Platform Used: Kubernetes, IBM blockchain,AWS EC2
+
+
 Full Stack: MERN MongoDB, Express, ReactJS, NodeJS.
+
+* Architecture Diagram
+![](images/architectureDiagram.PNG)
+
+
+* How does it work with IBM Blockhain platform
+
+<img src="images/blockchain.png" width="700" hight="500">
+
 
 
 
