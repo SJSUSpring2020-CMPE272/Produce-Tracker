@@ -2,8 +2,7 @@ import React from "react";
 import "./Dashboard.scss";
 import { TimelinePost } from "./TimelinePost";
 import axios from "axios";
-import backendServer from '../config';
-
+import backendServer from "../config";
 
 export class Dashboard extends React.Component {
     constructor(props) {
@@ -81,23 +80,35 @@ export class Dashboard extends React.Component {
                         address={manufacturer_add}
                         date={manufacturer_date}
                         qual={manufacturer_qual}
+                        raw={this.state.order.rawFoodProcessDate}
+                        type={"manufacturer"}
                     />
                     <TimelinePost
                         name={wholesaler}
                         date={wholesaler_date}
                         address={wholesaler_add}
                         qual={wholesaler_qual}
+                        type={"wholesaler"}
+                    />
+                    <TimelinePost
+                        name={this.state.order.logistics}
+                        date={this.state.order.logisticsProcessDate}
+                        address={this.state.order.logisticsAddress}
+                        qual={this.state.order.qualityAtLogistics}
+                        type={"logistic"}
                     />
                     <TimelinePost
                         name={retailer}
                         address={retailer_add}
                         date={retailer_date}
                         qual={retailer_qual}
+                        type={"retailer"}
                     />
                     <TimelinePost
                         name={consumer}
-                        consdateumer_date={consumer_date}
-                        consumer={"consumer"}
+                        qual={this.state.order.qualityAtConsumer}
+                        date={consumer_date}
+                        type={"consumer"}
                     />
                 </div>
             );
@@ -115,18 +126,22 @@ export class Dashboard extends React.Component {
                             address={manufacturer_add}
                             date={manufacturer_date}
                             qual={manufacturer_qual}
+                            raw={this.state.order.rawFoodProcessDate}
+                            type={"manufacturer"}
                         />
                         <TimelinePost
                             name={wholesaler}
                             date={wholesaler_date}
                             address={wholesaler_add}
                             qual={wholesaler_qual}
+                            type={"wholesaler"}
                         />
                         <TimelinePost
                             name={retailer}
                             address={retailer_add}
                             date={retailer_date}
                             qual={retailer_qual}
+                            type={"retailer"}
                         />
                     </div>
                 </div>
@@ -145,12 +160,15 @@ export class Dashboard extends React.Component {
                             address={manufacturer_add}
                             date={manufacturer_date}
                             qual={manufacturer_qual}
+                            raw={this.state.order.rawFoodProcessDate}
+                            type={"manufacturer"}
                         />
                         <TimelinePost
                             name={wholesaler}
                             date={wholesaler_date}
                             address={wholesaler_add}
                             qual={wholesaler_qual}
+                            type={"wholesaler"}
                         />
                     </div>
                 </div>
@@ -170,6 +188,8 @@ export class Dashboard extends React.Component {
                             address={manufacturer_add}
                             date={manufacturer_date}
                             qual={manufacturer_qual}
+                            raw={this.state.order.rawFoodProcessDate}
+                            type={"manufacturer"}
                         />
                     </div>
                 </div>
