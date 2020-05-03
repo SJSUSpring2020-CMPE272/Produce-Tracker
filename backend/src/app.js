@@ -10,8 +10,16 @@ let network = require('./fabric/network.js');
 const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000");
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+    res.setHeader('Cache-Control', 'no-cache');
+    next();
+  });
 
 // app.get('/queryAllCars', (req, res) => {
 //     network.queryAllCars()

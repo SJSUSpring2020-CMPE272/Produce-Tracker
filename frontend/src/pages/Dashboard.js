@@ -2,6 +2,8 @@ import React from "react";
 import "./Dashboard.scss";
 import { TimelinePost } from "./TimelinePost";
 import axios from "axios";
+import backendServer from '../config';
+
 
 export class Dashboard extends React.Component {
     constructor(props) {
@@ -14,7 +16,7 @@ export class Dashboard extends React.Component {
     componentDidMount() {
         axios
             .get(
-                `http://localhost:8081/getOrder?key=${this.props.match.params.orderId}`
+                `${backendServer}/getOrder?key=${this.props.match.params.orderId}`
             )
             .then((res) => {
                 this.setState({ order: res.data[0].Record });
