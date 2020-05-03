@@ -9,7 +9,7 @@ export const Home = () => (
                 <p className="heading-primary--main">Produce-Tracker</p>
                 <p className="heading-primary--sub">Welcome {"Admin"}</p>
             </div>
-            <Link to="/signup">
+            <Link to="/searchorder">
                 <button className="home-main-btn">Retreive Order</button>
             </Link>
             <Link to="/create">

@@ -12,7 +12,7 @@ export const TimelinePost = (props) => (
                     switch (props.qual) {
                         case "Good":
                             return (
-                                <span className="badge badge-pill bg-light border">
+                                <span className="badge badge-pill bg-success border">
                                     &nbsp;
                                 </span>
                             );
@@ -55,9 +55,9 @@ export const TimelinePost = (props) => (
                     <div className="card-font-size-header float-right text-muted">
                         {props.man_date}
                     </div>
-                    <h4 className="card-title text-muted">{props.name}</h4>
+                    <h4 className="card-title text-muted">Role {props.name}</h4>
                     <p className="card-text card-font-size-text">
-                        It was purchased from {props.name} at {props.date}
+                        It reached {props.name} at this time {props.date}
                         <br></br>
                         Address: {props.address}
                         <br></br>

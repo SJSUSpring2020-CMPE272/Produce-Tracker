@@ -1,7 +1,7 @@
 import React from "react";
-import "./Signup.scss";
+import "./SearchOrder.scss";
 
-export class Signup extends React.Component {
+export class SearchOrder extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

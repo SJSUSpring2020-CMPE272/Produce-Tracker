@@ -95,6 +95,7 @@ export class Dashboard extends React.Component {
                     <TimelinePost
                         name={consumer}
                         consdateumer_date={consumer_date}
+                        consumer={"consumer"}
                     />
                 </div>
             );
