@@ -1,0 +1,15 @@
+.wrapper_form {
+    border: 40px;
+    background-color: rgba(223, 213, 213, 0.6);
+    padding: 40px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+    padding-bottom: 40px;
+    max-width: 300px;
+    @media screen and (max-width: 900px) {
+        width: 60%;
+    }
+}
+
+.button_submit {
+    width: 50%;
+}
