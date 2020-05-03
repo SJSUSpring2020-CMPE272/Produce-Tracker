@@ -12,7 +12,7 @@ export const Home = () => (
             <Link to="/searchorder">
                 <button className="home-main-btn">Retreive Order</button>
             </Link>
-            <Link to="/create">
+            <Link to="/newProduce">
                 <button className="home-main-btn">Create Order</button>
             </Link>
         </div>
