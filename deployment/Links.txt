@@ -1,0 +1,9 @@
+Data regarding food waste --
+http://www.fao.org/food-loss-and-food-waste/flw-data/en/
+
+Blockchain Links for learning --
+https://github.com/IBM/Create-BlockchainNetwork-IBPV20
+https://coding-bootcamps.com/ultimate-guide-for-building-a-blockchain-supply-chain-using-hyperledger-fabric-and-composer.html
+https://cloud.ibm.com/docs/services/blockchain?topic=blockchain-get-started-ibp
+https://hyperledger-fabric.readthedocs.io/en/master/test_network.html
+https://hyperledger-fabric.readthedocs.io/en/release-2.0/blockchain.html
