@@ -1,6 +1,6 @@
 ## Produce Tracker
 <hr>
-An application for Supply Chain manufacturers/distributers/wholesalers to track the status of different produce goods. This product is targeted for big corporations to track the status of a particular product or shipment.
+Produce tracker is a multi-cloud fair trade supply network application that increases the visibility and efficiency of goods in the supply chain using iBM Blockchain Platform.
 
 ## Abstract
 <hr>
