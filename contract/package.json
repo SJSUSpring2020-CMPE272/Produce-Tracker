@@ -1,6 +1,6 @@
 {
-    "name": "produce-tracker",
-    "version": "1.0.0",
+    "name": "coronavirus-tracker",
+    "version": "1.0.1",
     "description": "producetracker contract implemented in JavaScript",
     "main": "index.js",
     "engines": {

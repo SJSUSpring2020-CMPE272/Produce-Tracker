@@ -1,5 +1,5 @@
 {
-    "connection_file": "mychannel_produce-tracker_profile.json",
+    "connection_file": "mychannel_coronavirus-tracker_profile.json",
     "appAdmin": "app-admin",
     "appAdminSecret": "app-adminpw",
     "orgMSPID": "Org1MSP",
