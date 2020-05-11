@@ -1,6 +1,6 @@
 ## Produce Tracker
 <hr>
-Produce tracker is a multi-cloud fair trade supply network application that increases the visibility and efficiency of goods in the supply chain using iBM Blockchain Platform.
+Produce tracker is a multi-cloud fair trade supply network application that increases the visibility and efficiency of goods in the supply chain using iBM Blockchain Platform.This application also has a feature of sending an alert to all the entities involved in the transaction if the product is delivered by someone who was found corona positive in past 14 days.
 
 ## Abstract
 <hr>
