@@ -10,7 +10,7 @@
 // module.exports.contracts = [ FabCar ];
 'use strict';
 
-const ProduceTracker = require('./lib/produceTracker');
+const CoronavirusTracker = require('./lib/coronavirusTracker');
 
-module.exports.ProduceTracker = ProduceTracker;
-module.exports.contracts = [ ProduceTracker ];
+module.exports.CoronavirusTracker = CoronavirusTracker;
+module.exports.contracts = [ CoronavirusTracker ];

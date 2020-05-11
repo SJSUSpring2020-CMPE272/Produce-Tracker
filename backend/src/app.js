@@ -1,4 +1,5 @@
 'use strict';
+const nodemailer = require('nodemailer');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -20,14 +21,13 @@ app.use(function(req, res, next) {
     res.setHeader('Cache-Control', 'no-cache');
     next();
   });
-
-// app.get('/queryAllCars', (req, res) => {
-//     network.queryAllCars()
-//         .then((response) => {
-//             let carsRecord = JSON.parse(response);
-//             res.send(carsRecord);
-//         });
-// });
+  app.get('/queryAllOrders', (req, res) => {
+    network.queryAllOrders()
+        .then((response) => {
+            let record = JSON.parse(response);
+            res.send(record);
+        });
+});
 
 app.get('/getOrder', (req, res) => {
     network.getOrder(req.query.key)
@@ -37,29 +37,44 @@ app.get('/getOrder', (req, res) => {
         });
 });
 
-
-
-// app.get('/querySingleCar', (req, res) => {
-//     console.log(req.query.key);
-//     network.querySingleCar(req.query.key)
-//         .then((response) => {
-//             let carsRecord = JSON.parse(response);
-//             res.send(carsRecord);
-//         });
-// });
-
-app.post('/createRawFood', (req, res) => {
+app.post('/createNewOrder', (req, res) => {
     console.log(req.body);
-        network.createRawFood(req.body.orderId, req.body.foodItem, new Date().toISOString())
+        network.createNewOrder(req.body.barcode, req.body.grocery_name, req.body.grocery_address,req.body.grocery_employeeid,
+            req.body.grocery_health,req.body.grocery_email,req.body.grocery_date ,
+            req.body.delivery_name,req.body.delivery_health,req.body.delivery_address,req.body.delivery_employeeid,req.body.delivery_email,
+            req.body.delivery_date,req.body.consumer_name,
+            req.body.consumer_address,req.body.consumer_email,req.body.consumer_date)
             .then((response) => {
                 res.send(response);
         });
 });
 
-app.post('/changeState', (req, res) => {
-    network.changeState(req.body.orderId, req.body.type, req.body.entityName, req.body.entityAddress, req.body.quality, new Date().toISOString())
+app.post('/reportCorona', (req, res) => {
+
+    network.reportCorona(req.body.barcode, req.body.type)
         .then((response) => {
-            res.send(response);
+            let transport = nodemailer.createTransport({
+                host: 'smtp.mailtrap.io',
+                port: 2525,
+                auth: {
+                   user: '7ee2a90121e570',
+                   pass: '6034b80ea1644d'
+                }
+            });
+            const message = {
+                from: 'coronavirus@tracker.com', // Sender address
+                to: req.body.consumer_email,         // List of recipients
+                subject: 'Alert | Employee tested positive for Corona', // Subject line
+                text: 'One of the employees who was part of the transaction ' + req.body.barcode + ' is tested positive for Covid-19. Please be safe' // Plain text body
+            };
+            transport.sendMail(message, function(err, info) {
+                if (err) {
+                  console.log(err)
+                } else {
+                    res.send(response);
+                }
+            });
+        
         });
 });
 

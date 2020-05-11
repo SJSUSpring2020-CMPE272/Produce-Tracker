@@ -48,7 +48,7 @@ exports.getOrder = async function(orderId) {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('produce-tracker');
+        const contract = network.getContract('coronavirus-tracker');
 
         // Evaluate the specified transaction.
         // queryCar transaction - requires 1 argument, ex: 'getOrder('orderId')'
@@ -66,7 +66,11 @@ exports.getOrder = async function(orderId) {
 };
 
 //create new produce
-exports.createRawFood = async function(orderId, foodItem, rawFoodProcessDate) {
+exports.createNewOrder = async function( barcode, grocery_name, grocery_address,grocery_employeeid,
+    grocery_health,grocery_email,grocery_date ,
+    delivery_name,delivery_health,delivery_address,delivery_employeeid,delivery_email,
+    delivery_date,consumer_name,
+    consumer_address,consumer_email,consumer_date) {
     let response = {};
     try {
 
@@ -92,11 +96,15 @@ exports.createRawFood = async function(orderId, foodItem, rawFoodProcessDate) {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('produce-tracker');
+        const contract = network.getContract('coronavirus-tracker');
 
         // Submit the specified transaction.
         // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
-        await contract.submitTransaction('createRawFood', orderId, foodItem, rawFoodProcessDate);
+        await contract.submitTransaction('createNewOrder',  barcode, grocery_name, grocery_address,grocery_employeeid,
+        grocery_health,grocery_email,grocery_date ,
+        delivery_name,delivery_health,delivery_address,delivery_employeeid,delivery_email,
+        delivery_date,consumer_name,
+        consumer_address,consumer_email,consumer_date);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.
@@ -114,7 +122,7 @@ exports.createRawFood = async function(orderId, foodItem, rawFoodProcessDate) {
 
 
 // change state of produce 
-exports.changeState = async function(orderId, type, entityName, entityAddress, quality, date) {
+exports.reportCorona = async function(barcode, type) {
     let response = {};
     try {
 
@@ -140,11 +148,11 @@ exports.changeState = async function(orderId, type, entityName, entityAddress, q
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('produce-tracker');
+        const contract = network.getContract('coronavirus-tracker');
 
         // Submit the specified transaction.
         // changeState transaction - requires 6 args , ex: ('changeState', 'ORDER1', 'manufacturer','MAN1','ADD1','Good','23-04-2019')
-        await contract.submitTransaction('changeState', orderId, type, entityName, entityAddress, quality, date);
+        await contract.submitTransaction('reportCorona', barcode, type);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.
@@ -256,50 +264,50 @@ exports.changeState = async function(orderId, type, entityName, entityAddress, q
 // };
 
 // // query all cars transaction
-// exports.queryAllCars = async function() {
+exports.queryAllOrders = async function() {
 
-//     let response = {};
-//     try {
-//         console.log('queryAllCars');
+    let response = {};
+    try {
+        console.log('queryAllOrders');
 
-//         // Create a new file system based wallet for managing identities.
-//         const walletPath = path.join(process.cwd(), '../wallet');
-//         const wallet = new FileSystemWallet(walletPath);
-//         console.log(`Wallet path: ${walletPath}`);
+        // Create a new file system based wallet for managing identities.
+        const walletPath = path.join(process.cwd(), '../wallet');
+        const wallet = new FileSystemWallet(walletPath);
+        console.log(`Wallet path: ${walletPath}`);
 
-//         // Check to see if we've already enrolled the user.
-//         const userExists = await wallet.exists(userName);
-//         if (!userExists) {
-//             console.log('An identity for the user ' + userName + ' does not exist in the wallet');
-//             console.log('Run the registerUser.js application before retrying');
-//             response.error = 'An identity for the user ' + userName + ' does not exist in the wallet. Register ' + userName + ' first';
-//             return response;
-//         }
+        // Check to see if we've already enrolled the user.
+        const userExists = await wallet.exists(userName);
+        if (!userExists) {
+            console.log('An identity for the user ' + userName + ' does not exist in the wallet');
+            console.log('Run the registerUser.js application before retrying');
+            response.error = 'An identity for the user ' + userName + ' does not exist in the wallet. Register ' + userName + ' first';
+            return response;
+        }
 
-//         // Create a new gateway for connecting to our peer node.
-//         const gateway = new Gateway();
-//         await gateway.connect(ccp, { wallet, identity: userName, discovery: gatewayDiscovery });
+        // Create a new gateway for connecting to our peer node.
+        const gateway = new Gateway();
+        await gateway.connect(ccp, { wallet, identity: userName, discovery: gatewayDiscovery });
 
-//         // Get the network (channel) our contract is deployed to.
-//         const network = await gateway.getNetwork('mychannel');
+        // Get the network (channel) our contract is deployed to.
+        const network = await gateway.getNetwork('mychannel');
 
-//         // Get the contract from the network.
-//         const contract = network.getContract('fabcar');
+        // Get the contract from the network.
+        const contract = network.getContract('coronavirus-tracker');
 
-//         // Evaluate the specified transaction.
-//         // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-//         const result = await contract.evaluateTransaction('queryAllCars');
-//         //console.log('check6');
-//         //console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+        // Evaluate the specified transaction.
+        // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
+        const result = await contract.evaluateTransaction('queryAllOrders');
+        //console.log('check6');
+        //console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
 
-//         return result;
+        return result;
 
-//     } catch (error) {
-//         console.error(`Failed to evaluate transaction: ${error}`);
-//         response.error = error.message;
-//         return response;
-//     }
-// };
+    } catch (error) {
+        console.error(`Failed to evaluate transaction: ${error}`);
+        response.error = error.message;
+        return response;
+    }
+};
 
 // // query the car identified by key
 // exports.querySingleCar = async function(key) {
